@@ -1,0 +1,12 @@
+T = int(input())
+for i in range(T):
+    y = input().split()
+
+    if y[2] == "+":
+        print(f"{int(y[1])+int(y[3]):.6f}")
+    elif y[2] == "-":
+        print(f"{int(y[1])-int(y[3]):.6f}")
+    elif y[2] == "/":
+        print(f"{int(y[1])/int(y[3]):.6f}")
+    elif y[2] == "*":
+        print(f"{int(y[1])*int(y[3]):.6f}") 
