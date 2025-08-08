@@ -1,0 +1,26 @@
+n = int(input())
+train = []
+
+for i in range(n):
+    train.append(input())
+
+# Bubble Sort
+for j in range(len(train) - 1):
+    for k in range(len(train) - j - 1):
+        train1_name = train[k].split()[0]
+        train2_name = train[k + 1].split()[0]
+        train1_time = train[k].split()[-1]
+        train2_time = train[k + 1].split()[-1]
+
+        # Sorting based on name (lexicographically)
+        if train1_name > train2_name:
+            train[k], train[k + 1] = train[k + 1], train[k]
+
+        # If names are the same, sort by departure time (descending)
+        elif train1_name == train2_name:
+            if train1_time < train2_time:  # Latest time comes first
+                train[k], train[k + 1] = train[k + 1], train[k]
+
+# Print sorted train schedule
+for t in train:
+    print(t)
