@@ -1,0 +1,12 @@
+def is_odd_or_even(n):
+    if n % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+
+T = int(input())
+
+for i in range(T):
+    N = int(input())
+    print(f"{N} is an {is_odd_or_even(N)} number.")
