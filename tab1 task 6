@@ -1,0 +1,22 @@
+n = int(input())  
+id = list(map(int, input().split()))
+mark = list(map(int, input().split()))
+swap_count = 0  
+
+for i in range(n - 1):
+    swap = i
+    for j in range(i + 1, n):
+        if mark[j] > mark[swap]:  
+            swap = j
+        elif mark[j] == mark[swap] and id[j] < id[swap]: 
+            swap = j  
+
+    
+    if swap != i:
+        mark[i], mark[swap] = mark[swap], mark[i]
+        id[i], id[swap] = id[swap], id[i]
+        swap_count += 1
+
+print(f"Minimum swaps: {swap_count}")
+for i in range(n):
+    print(f"ID: {id[i]} Mark: {mark[i]}")
