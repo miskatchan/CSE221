@@ -1,0 +1,8 @@
+n, k = map(int, input().split())
+arr = list(map(int, input().split()))
+
+reversed_arr = arr[k-1::-1]
+
+
+print(*reversed_arr)
+
